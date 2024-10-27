@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1c77068e3f.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="../img/logo2.png" type="image/x-icon">
+    <title>ArtConnect Ajuda</title>
+    <style>
+        :root {
+            --azul: #191940;
+            --vermelho: #060f46;
+            --verde: #435863;
+            --branco-gelo: #e6d0bdd2;
+            --branco-creme: #f6ebe2;
+            --preto: #333;
+            --preto-dk: #121212; /* Cor de fundo escura */
+            --branco-dk: #ffffff; /* Cor de texto clara no modo escuro */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: none;
+            outline: none;
+            line-height: 1.6;
+            font-family: 'Work Sans', sans-serif;
+            text-decoration: none;
+            text-transform: none;
+            font-style: normal;
+            transition: all 0.5s ease-in;
+            scroll-behavior: smooth;
+            scroll-padding-top: 16vh;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: var(--branco-gelo);
+            color: var(--preto);
+            transition: background-color 0.3s, color 0.3s; /* Transição suave para modo escuro */
+        }
+
+        body.dark-mode {
+            background-color: var(--preto-dk);
+            color: var(--branco-dk);
+        }
+
+        section {
+            padding: 2rem 7%;
+        }
+
+        .header {
+            background-image: url(../img/heather-bg.jpg);
+            display: flex;
+            justify-content: space-evenly;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 16vh;
+            z-index: 1000;
+        }
+
+        .header .logo img {
+            height: 32rem;
+        }
+
+        nav {
+            margin-top: 15px;
+            margin-left: 150px;
+        }
+
+        .header .navbar a {
+            justify-content: flex-end;
+            color: white;
+            font-size: 1.8rem;
+            margin: 10px 30px 0 0;
+        }
+
+        .header .navbar a:hover {
+            color: var(--vermelho);
+            border-top: 0.2rem solid var(--vermelho);
+            border-bottom: 0.2rem solid var(--vermelho);
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            .header .navbar a {
+                margin: 10px 0;
+            }
+
+            .header .logo img {
+                height: 20rem; /* Ajuste de tamanho para dispositivos móveis */
+            }
+
+            section {
+                padding: 1rem 5%; /* Menos espaço em dispositivos móveis */
+            }
+        }
+
+        .dropbtn {
+            background-color: transparent;
+            color: white;
+            margin-top: 1rem;
+            font-size: 2.5rem;
+            margin-left: 8rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropbtn:hover, .dropbtn:focus {
+            background: transparent;
+            color: white;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 1.6rem;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+
+        /* Estilos dos títulos e parágrafos */
+        h2 {
+            color: var(--vermelho);
+            font-weight: lighter;
+            font-size: 2.8rem;
+        }
+
+        p {
+            font-size: 1.35rem;
+            font-weight: lighter;
+        }
+
+        footer {
+            background-color: var(--vermelho);
+            text-align: center;
+        }
+
+        .footer .links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 2rem;
+            gap: 1rem;
+        }
+        
+        .footer .links a{
+           padding: 0.8rem 2.5rem;
+           margin-top: 1rem;
+           margin-right: 15px;
+           background-color: var(--vermelho);
+           border-radius: 20px;
+           padding: 7px 30px;
+           color: #fff;
+           border: 1px solid var(--vermelho);
+           font-size: 2rem;
+        }
+.footer .links a:hover{
+    border: 20rem;
+    border-radius: 20px;
+    background-color: var(--verde);
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+        .footer .credits {
+            font-size: 1.7rem;
+            color: var(--branco-gelo);
+            font-weight: normal;
+            padding: 1.5rem;
+        }
+.footer .credits{
+    font-size: 1.7rem;
+    color: var(--branco-gelo);
+    font-weight: normal;
+    padding: 1.5rem;
+}
+.footer .credits span{
+    color: var(--branco-creme);
+}
+
+        /* Botão de modo escuro */
+        #dark-mode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: var(--azul);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="" class="logo"><img src="./img/logo3.png" alt="Logo" /></a>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="exibir.php">Galeria</a>
+            <a href="mural.html">Calendário</a>
+            <a href="index.html#aboutus">About us</a>
+            <a href="index.html#contact">Contato</a>
+        </nav>
+    </header>
+    <section>
+        <div class="start">
+            <h1>Página de Ajuda</h1>
+            <p>Bem-vindo à página de ajuda do ArtConnect, onde você pode encontrar informações para melhorar sua experiência em nosso site.</p>
+        </div>
+    </section>
+    <section>
+        <div class="cadastro-help">
+            <h2>Cadastro e Conta</h2>
+            <p>Para criar e logar uma conta, acesse a seção "Cadastre-se" na página inicial em baixo da barra de navegação, escolha seu tipo de cadastro (Artista, Pessoa Comum ou Empresa) e preencha todos os campos com as informações necessárias.</p>
+        </div>       
+    </section>
+    <section>
+        <div class="postando-artista-help">
+            <h2>Postando Obras de Arte</h2>
+            <p>Para postar sua obra de arte, cadastre-se como artista e clique no ícone no canto superior direito da barra de navegação e clique em "Poste sua Obra".</p>
+        </div>
+    </section>
+    <section>
+        <div class="eventos-help">
+            <h2>Eventos Regionais</h2>
+            <p>Os eventos são mostrados conforme sua localização. Certifique-se de ter habilitado a localização em seu navegador ou configurar sua região manualmente em "Configurações".</p>
+        </div>
+    </section>
+    <section>
+        <div class="acessibilidade-help">
+            <h2>Acessibilidade</h2>
+            <p>Oferecemos opções para daltônicos, alt text para pessoas de baixa ou nenhuma visão e modo escuro e ajuste de contraste para sensibilidade à luz. O modo escuro pode ser acessado ao clicar no botão com um ícone de lua na tela e o restante das opções podem ser acessadas no menu de acessibilidade localizado ao clicar na área do usuário na barra de navegação.</p>
+        </div>
+    </section>
+    <section>
+        <div class="taxa">
+            <h2>Aviso de Cobrança de Taxa</h2>
+            <p>Conforme nossos termos de serviço, será aplicada uma taxa administrativa de 30% sobre o valor total dos seus ganhos em cada venda realizada pelo artista não assinante. Essa taxa tem como objetivo cobrir os custos operacionais da plataforma e garantir a manutenção dos serviços prestados.</p>
+        </div>
+    </section>
+    <section>
+        <div class="end">
+            <p>Para mais assistência, contate nosso suporte ao usuário na área de Contato.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="exibir.php">Galeria</a>
+            <a href="mural.html">Calendário</a>
+            <a href="index.html#aboutus">About us</a>
+            <a href="index.html#contact">Contato</a>
+        </div>
+        <div class="credits">
+            created by <span> &copy; 2024 ArteConnect</span> | all rights reserved.
+        </div>
+    </footer>
+
+    <button id="dark-mode-toggle">Modo Escuro</button>
+
+    <script>
+        // Alternar entre modo claro e escuro
+        const toggleButton = document.getElementById('dark-mode-toggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>
